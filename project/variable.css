@@ -1,0 +1,11 @@
+:root {
+    --body-font:  "Poppins", sans-serif;
+    --card-font: "Inconsolata", monospace;
+
+    --body-bg-color: #3b4a6b;
+    --text-white: #fff;
+    --text-wheat: #f5deb3;
+    --text-grey: #808080;
+    --text-black: #000;
+    --btn-color: #ff0000;
+}

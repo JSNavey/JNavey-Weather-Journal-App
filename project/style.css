@@ -1,111 +1,204 @@
-body{
-    background: #fffff8;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+/********* Import CSS variables from variable.css *********/
+@import "../project/variable.css";
+
+/********* Style Reset *********/
+* {
+    box-sizing: border-box;
 }
 
-#app{
-    display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
-    height:100vh;
-    background: #f23557;
-    color: #f0d43a;
-    justify-content: center;
-    grid-gap: 1em;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: var(--body-font);
+    background-color: var(--body-bg-color);
+    color: var(--text-white);
 }
 
-.holder{
-
+a {
+    text-decoration: none;
 }
 
-.entry{
-    background: rgba(59, 74, 107, .4);
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-#entryHolder{
-
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
 }
 
-#date{
-
+input, textarea {
+    -webkit-user-select: auto;
 }
 
-#temp{
-
+textarea {
+    white-space: revert;
 }
 
-#content{
+::placeholder {
+    color: var(--text-grey);
+    font-family: var(--card-font);
+    font-size: 1.15em;
+}
 
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--text-grey);
+    font-family: var(--card-font);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+input:focus {
+    color: var(--text-white);
+}
+
+button {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border-radius: 5px;
+    background: var(--btn-color);
+    color: var(--text-white);
+}
+
+
+/********* App Section *********/
+
+#app {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+.holder {
+    display: flex;
 }
 
 .headline {
-
-}
-.title{
-
-}
-
-/*  Basic Styling To Override Default For Basic HTML Elements */
-label{
-    display:block;
-    font-size: 27px;
-}
-
-input{
-    display:block;
-    height: 60px;
-    width: 320px;
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
+    font-size: 5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-wheat);
+    height: 2em;
+    padding-top: 0.5em;
+    display: flex;
+    justify-content: center;
+    
 }
 
-button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    box-shadow: 2px 4px 5px #444;
-}
-h1{
-    font-size: 36px;
+.zip {
+    display: flex;
+    flex-direction: column;
+    height: 10em;
+    padding: 2em 0;
 }
 
-textarea{
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+.input-area {
+    width: 70%;
 }
-/* Reset style for HTML element on active to have no border*/
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
+
+.zip input {
+    min-width: 60%;
+    font-size: 1rem;
+    height: 40px;
+    padding: 5px 5px 10px;
+    margin-top: 1em;
+    background-color: transparent;
     outline: none;
+    border: none;
+    border-bottom: 2px solid var(--text-white);
 }
-/* Style for Placeholder Text*/
-::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
 
-} 
-  
-:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+.holder label {
+    font-size: 2em;
+}
 
-} 
-  
-::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+.feel {
+    height: 18em;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+}
 
-} 
+.feel textarea {
+    height: 12em;
+    margin: 2em 0 0.5em 0;
+    padding: 1em;
+    border-radius: 3.5px;
+    font-size: 1.1em;
+    font-family: var(--card-font);
+}
+
+#generate-btn {
+    height: 4em;
+}
+
+.card {
+    max-width: 100%;
+    height: 40em;
+    display: grid;
+    grid-template-rows: 15% auto 20%;
+    margin-top: 5em;
+    background-color: var(--text-white);
+    color: var(--text-black);
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.title {
+    font-size: 2em;
+    padding: 0.5em 0;
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+#entryHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5em 0;
+    padding-top: 1em;
+    font-family: var(--card-font);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#city,
+#date {
+    font-size: 2em;
+}
+
+#date {
+    padding: 1em 0;
+}
+
+#temp h1 {
+    font-size: 3em;
+}
+
+#content::before {
+    content: "Today I feel ";
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+#content {
+    font-family: var(--card-font);
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-top: 0.5em;
+}
