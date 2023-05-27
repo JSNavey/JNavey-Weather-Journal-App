@@ -1,4 +1,9 @@
+// Require dotenv to access API KEY that stored in .env file.
+require("dotenv").config();
+
 /* Global Variables */
+const baseUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial";
+const apiKey = process.env.WEATHER_API_KEY;
 
 // Create a new date instance dynamically with JS
 let d = new Date();
