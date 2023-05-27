@@ -30,10 +30,6 @@ img {
     max-block-size: 100%;
 }
 
-input, textarea {
-    -webkit-user-select: auto;
-}
-
 textarea {
     white-space: revert;
 }
@@ -176,19 +172,27 @@ button {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#city,
-#date {
-    font-size: 2em;
+#date,
+#city {
+    font-size: 1.25em;
 }
 
 #date {
-    padding: 1em 0;
+    padding: 0.5em 0;
+}
+
+.icon {
+    margin-top: 1.5em;
 }
 
 #temp h1 {
     font-size: 3em;
 }
 
+#description {
+    font-size: 2em;
+    padding-bottom: 1em;
+}
 #content::before {
     content: "Today I feel ";
     text-transform: capitalize;
