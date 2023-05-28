@@ -1,5 +1,5 @@
 /********* Import CSS variables from variable.css *********/
-@import "../project/variable.css";
+@import "variable.css";
 
 /********* Style Reset *********/
 * {
@@ -166,7 +166,7 @@ button {
     flex-direction: column;
     align-items: center;
     margin: 1.5em 0;
-    padding-top: 1em;
+    padding: 1em 0;
     font-family: var(--card-font);
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -181,12 +181,13 @@ button {
     padding: 0.5em 0;
 }
 
-.icon {
+#img {
     margin-top: 1.5em;
 }
 
 #temp h1 {
     font-size: 3em;
+    margin-bottom: 0.15em;
 }
 
 #description {
