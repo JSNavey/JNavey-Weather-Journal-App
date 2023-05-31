@@ -137,7 +137,7 @@ button {
     font-family: var(--card-font);
 }
 
-#generate-btn {
+#generate {
     height: 4em;
 }
 
@@ -185,7 +185,7 @@ button {
     margin-top: 1.5em;
 }
 
-#temp h1 {
+#temp {
     font-size: 3em;
     margin-bottom: 0.15em;
 }
@@ -199,6 +199,10 @@ button {
     content: "Today I feel ";
     text-transform: capitalize;
     font-weight: 400;
+}
+
+#content::after {
+    content: ".";
 }
 
 #content {

@@ -20,28 +20,29 @@ const cors = require("cors");
 app.use(cors());
 
 // Initialize the main project folder
-app.use(express.static('project'));
+app.use(express.static("project"));
+
+
+// Callback function to complete GET '/all'
+const getAllData = (req, res) => {
+    res.status(200).send(projectData);
+};
+
+// Initialize all route with a callback function
+app.get("/all", getAllData);
+
+// Callback function to complete POST '/addData'
+const addData = (req, res) => {
+    projectData = req.body;
+    res.status(200).send(projectData);
+};
+
+// Post Route
+app.post("/addData", addData);
+
 
 // Spin up the server and callback to debug
 const port = 5000;
 const server = app.listen(port, () => {
     console.log(`server is running on localhost: ${port}`);
 });
-
-// Initialize all route with a callback function
-app.get("/all", getAllData)
-
-// Callback function to complete GET '/all'
-const getAllData = (req, res) => {
-    res.send(projectData);
-};
-
-// Post Route
-const addData = (req, res) => {
-    const data = req.body;
-    projectData["date"] = data.date;
-    projectData["city"] = data.city;
-    projectData["img"] = data.img;
-    projectData["description"] = data.description;
-    projectData["content"] = data.content;
-};
