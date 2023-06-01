@@ -1,10 +1,13 @@
 /* Global Variables */
-// Personal API Key for OpenWeatherMap API
+const userInput = document.getElementById("user-input");
+
+// Url and personal API Key for OpenWeatherMap API
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
 const apiKey = "252d8f5af13e40e7b1eb49d3db775580&units=imperial";
+const weatherIconUrl = "https://openweathermap.org/img/wn/";
 
 // Create a new date instance dynamically with JS 
-// Format Month date, year
+// Month date, year Format
 let d = new Date();
 const options = {
     year: "numeric",
@@ -21,6 +24,7 @@ const fetchWeather = async (zip) => {
         let res = await fetch(`${baseUrl}?zip=${zip},us&appid=${apiKey}`);
         let data = await res.json();
 
+        console.log(data);
         return data;
 
     } catch (error) {
@@ -51,9 +55,10 @@ const updateUI = async () => {
     const res = await fetch("/all");
     try {
         const savedData = await res.json();
-
+        
         document.getElementById("date").innerHTML = newDate;
         document.getElementById("city").innerHTML = savedData.city;
+        document.getElementById("img").src = `${weatherIconUrl}${savedData.img}@2x.png`;
         document.getElementById("temp").innerHTML = Math.round(savedData.temp) + "&degF";
         document.getElementById("description").innerHTML = savedData.description;
         document.getElementById("content").innerHTML = savedData.content;
@@ -71,13 +76,14 @@ const generateOnClick = (e) => {
     // Get values from client side form
     const zipCode = document.getElementById("zip").value;
     const feelings = document.getElementById("feelings").value;
-    const userInput = document.getElementById("user-input");
+    
     
     fetchWeather(zipCode)
     .then((data) => {
             postData("/addData", {
                 date: newDate,
                 city: data.name,
+                img: data.weather[0].icon,
                 temp: data.main.temp,
                 description: data.weather[0].description,
                 content: feelings

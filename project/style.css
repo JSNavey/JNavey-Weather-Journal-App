@@ -193,6 +193,7 @@ button {
 #description {
     font-size: 2em;
     padding-bottom: 1em;
+    text-transform: capitalize;
 }
 
 #content::before {
