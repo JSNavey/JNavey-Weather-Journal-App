@@ -1,10 +1,10 @@
-/* Global Variables */
-const userInput = document.getElementById("user-input");
-
 // Url and personal API Key for OpenWeatherMap API
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
 const apiKey = "252d8f5af13e40e7b1eb49d3db775580&units=imperial";
 const weatherIconUrl = "https://openweathermap.org/img/wn/";
+
+/* Global Variables */
+const userInput = document.getElementById("user-input");
 
 // Create a new date instance dynamically with JS 
 // Month date, year Format
@@ -97,7 +97,6 @@ const generateOnClick = (e) => {
     // Clear the user input form
     userInput.reset()
 };
-
 
 // Event listener to add function to existing HTML DOM element
 const generateBtn = document.getElementById("generate");
