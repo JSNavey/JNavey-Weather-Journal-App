@@ -10,6 +10,7 @@ This is the third project of Front End Development - Bertelsmann Next Generation
 
 - [Installation](#installation)
 - [OpenWeatherMap API Credential](#openweathermap-api-credentials)
+- [How to Run the Application](#how-to-run-the-application)
 - [Development](#development)
 - [How to Contribute](#how-to-contribute)
 - [Resource Credits](#resource-credits)
@@ -30,6 +31,9 @@ This project acquires API credentials from [OpenWeatherMap website](https://open
 2. An API key will be sent to your registered email but it needs a few hours before activation.
 3. Once the key is activated, store `baseUrl` and `apiKey` at the top of the `app.js` file<br>
 >`const apiKey = '<your_api_key>&units=imperial';`
+
+# How to Run the Application
+Run `node server.js` command in the terminal.
 
 # Development
 This project is built from HTML, CSS and Javascript languages.<br>
