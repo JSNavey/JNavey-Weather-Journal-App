@@ -77,7 +77,6 @@ const generateOnClick = (e) => {
     const zipCode = document.getElementById("zip").value;
     const feelings = document.getElementById("feelings").value;
     
-    
     fetchWeather(zipCode)
     .then((data) => {
             postData("/addData", {

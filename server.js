@@ -40,7 +40,6 @@ const addData = (req, res) => {
 // Post Route
 app.post("/addData", addData);
 
-
 // Spin up the server and callback to debug
 const port = 5000;
 const server = app.listen(port, () => {
