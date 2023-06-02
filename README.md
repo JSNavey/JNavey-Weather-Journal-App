@@ -18,17 +18,17 @@ This is the third project of Front End Development - Bertelsmann Next Generation
 # Installation
 To be able to start this project, `node` is needed to be installed.
 1. Check if node and npm are installed in your computer. Open up the terminal and type these two commands<br> 
-`` `node -v` to see node version e.g `v18.16.0` ``.<br>
-`` `npm -v` for npm version e.g `9.5.1` ``<br>
+`node -v to see node version e.g v18.16.0`.<br>
+`npm -v for npm version e.g 9.5.1`<br>
 2. Otherwise download node.js from `https://nodejs.org/en/download`. Once it is installed, run those two commands above to double-check. 
-3. Intall necessary project dependencies - `express`, `cors` and `body-parser` by running this commnad <br>
+3. Intall necessary project dependencies which are `express`, `cors` and `body-parser` by running this commnad <br>
 `npm install express cors body-parser`
 
 # OpenWeatherMap API Credentials
 This project acquires API credentials from [OpenWeatherMap website](https://openweathermap.org/) in order to get weather data.
 1. Sign up [OpenWeatherMap website](https://openweathermap.org/).
 2. An API key will be sent to your registered email but it needs a few hours before activation.
-3. Store `baseUrl` and `apiKey` at the top of the `app.js` file<br>
+3. Once the key is activated, store `baseUrl` and `apiKey` at the top of the `app.js` file<br>
 >`const apiKey = '<your_api_key>&units=imperial';`
 
 # Development
@@ -48,4 +48,3 @@ There is plenty of room for improvement. You are very welcome to clone the repo.
 
 # License
 No license.
-
